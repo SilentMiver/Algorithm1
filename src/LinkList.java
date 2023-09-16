@@ -61,6 +61,27 @@ public class LinkList<T> {
             pointer = pointer.getLinkNext();
         }
     }
+    public Node getValueAt(int index){
+        if(index==1){
+            return start;
+        }
+        if (index==size){
+            return end;
+        }
+        Node pointer = start;
+        for (int i = 2; i <= size; i++) {
+            if (i == index) {
+                return pointer;
+            }
+            pointer = pointer.getLinkNext();
+
+
+
+
+        }
+        return null;
+    }
+
 
     public void add(T val) {
         Node newnode = new Node(val, null, null);
