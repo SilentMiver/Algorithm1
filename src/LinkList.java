@@ -7,15 +7,27 @@ public class LinkList<T> {
         end = null;
         size = 0;
     }
-    public void insertAtStart(T val) {
-        Node nptr = new Node(val, null, null);
+    public void insertAtEnd(T val) {
+        Node newnode = new Node(val, null, null);
         if (start == null) {
-            start = nptr;
+            start = newnode;
             end = start;
         } else {
-            start.setLinkPrev(nptr);
-            nptr.setLinkNext(start);
-            start = nptr;
+            newnode.setLinkPrev(end);
+            end.setLinkNext(newnode);
+            end = newnode;
+        }
+        size++;
+    }
+    public void insertAtStart(T val) {
+        Node newnode = new Node(val, null, null);
+        if (start == null) {
+            start = newnode;
+            end = start;
+        } else {
+            start.setLinkPrev(newnode);
+            newnode.setLinkNext(start);
+            start = newnode;
         }
         size++;
     }
@@ -23,22 +35,22 @@ public class LinkList<T> {
     public void showAllData() {
         System.out.print("\nDoubly Linked List = { ");
         if (size == 0) {
-            System.out.print("empty\n");
+            System.out.print("empty }\n");
             return;
         }
         if (start.getLinkNext() == null) {
-            System.out.println(start.getData());
+            System.out.println(start.getData() + " }");
             return;
         }
-        Node ptr = start;
+        Node node_var = start;
         System.out.print(start.getData() + " --- ");
-        ptr = start.getLinkNext();
-        while (ptr.getLinkNext() != null) {
-            System.out.print(ptr.getData() + " --- ");
-            ptr = ptr.getLinkNext();
+        node_var = start.getLinkNext();
+        while (node_var.getLinkNext() != null) {
+            System.out.print(node_var.getData() + " --- ");
+            node_var = node_var.getLinkNext();
         }
 
-        System.out.print(ptr.getData() + " }" + "\n");
+        System.out.print(node_var.getData() + " }" + "\n");
 
     }
 }
