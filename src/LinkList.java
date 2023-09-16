@@ -1,7 +1,7 @@
 public class LinkList<T> {
+    public int size;
     protected Node start; //сс
     protected Node end;
-    public int size;
 
     public LinkList() {
         start = null;
@@ -61,11 +61,12 @@ public class LinkList<T> {
             pointer = pointer.getLinkNext();
         }
     }
-    public Node getValueAt(int index){
-        if(index==1){
+
+    public Node getValueAt(int index) {
+        if (index == 1) {
             return start;
         }
-        if (index==size){
+        if (index == size) {
             return end;
         }
         Node pointer = start;
@@ -74,8 +75,6 @@ public class LinkList<T> {
                 return pointer;
             }
             pointer = pointer.getLinkNext();
-
-
 
 
         }

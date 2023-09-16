@@ -20,29 +20,29 @@ public class Node<T> {
         data = d;
     }
 
+    public Node getLinkNext() {
+        return next;
+    }
+
     public void setLinkNext(Node n) {
         next = n;
 
-    }
-
-    public void setLinkPrev(Node p) {
-        previous = p;
-    }
-
-    public Node getLinkNext() {
-        return next;
     }
 
     public Node getLinkPrev() {
         return previous;
     }
 
-    public void setData(T d) {
-        data = d;
+    public void setLinkPrev(Node p) {
+        previous = p;
     }
 
     public T getData() {
         return data;
+    }
+
+    public void setData(T d) {
+        data = d;
     }
 
     @Override

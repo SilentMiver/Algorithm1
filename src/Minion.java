@@ -13,6 +13,7 @@ public class Minion {
         this.age = age;
         this.name = name;
     }
+
     public Minion() {
         Random random = new Random();
 
