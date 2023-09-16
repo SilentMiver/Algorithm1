@@ -13,5 +13,10 @@ public class Main {
         list.showAllData();
         list.deleteAt(4);
         list.showAllData();
+        list.add(new Minion(21,"Samuel"));
+        list.showAllData();
+        LinkList<Minion> minionLinkList = new LinkList<>();
+        minionLinkList.add(new Minion(21,"Samuel"));
+        minionLinkList.showAllData();
     }
 }
